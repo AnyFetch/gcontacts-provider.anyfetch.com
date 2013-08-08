@@ -17,7 +17,6 @@ mongoose.connect(configuration.mongo_url);
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
-server.use(middleware.basicAuth);
 
 // Load routes
 require("./config/routes.js")(server, handlers);
