@@ -15,7 +15,7 @@
  */
 
 var readline = require('readline');
-
+var request = require('request');
 var googleapis = require('googleapis');
 var keys = require('../keys');
 var OAuth2Client = googleapis.OAuth2Client;
@@ -35,7 +35,7 @@ function getAccessToken(oauth2Client, callback) {
   // generate consent page url
   var url = oauth2Client.generateAuthUrl({
     access_type: 'offline',
-    scope: 'https://www.googleapis.com/auth/plus.me'
+    scope: 'https://www.google.com/m8/feeds'
   });
 
   console.log('Visit the url: ', url);
@@ -51,34 +51,51 @@ function getAccessToken(oauth2Client, callback) {
   });
 }
 
-function getUserProfile(client, authClient, userId, callback) {
-  client
-    .plus.people.get({ userId: userId })
-    .withAuthClient(authClient)
-    .execute(callback);
-}
-
-function printUserProfile(err, profile) {
-  if (err) {
-    console.log('An error occurred', err, '\np\n', profile);
-  } else {
-    console.log(profile.displayName, ':', profile.tagline);
+function getUserContacts(accessToken) {
+  params = {
+    url: 'https://www.google.com/m8/feeds/contacts/default/full',
+    qs: {
+      alt: 'json',
+      'max-results': 1000,
+      'orderby': 'lastmodified'
+    },
+    headers: {
+      'Authorization': 'OAuth ' + accessToken,
+      'GData-Version': '3.0'
+    }
   }
+
+  request.get(params, function (err, resp, body) {
+    if(resp.statusCode === 401){
+      throw new Error("Wrong Authorization provided.");
+    }
+
+    var feed = JSON.parse(body);
+    var users = feed.feed.entry.map(function (c) {
+      var r = {};
+      if(c['gd$name'] && ['gd$fullName']){
+        r.name = c['gd$name']['gd$fullName']['$t'];
+      }
+      if (c['gd$email'] && c['gd$email'].length > 0) {
+        r.email = c['gd$email'][0]['address'];
+      }
+
+      return r;
+    });
+
+    console.log(users);
+  });
 }
 
 // load google plus v1 API resources and methods
-googleapis
-  .discover('plus', 'v1')
-  .execute(function(err, client) {
+googleapis.execute(function(err, client) {
 
   var oauth2Client =
     new OAuth2Client(CLIENT_ID, CLIENT_SECRET, REDIRECT_URL);
 
   // retrieve an access token
   getAccessToken(oauth2Client, function() {
-    // retrieve user profile
-    getUserProfile(
-      client, oauth2Client, 'me', printUserProfile);
+    getUserContacts(oauth2Client.credentials.access_token);
   });
 
 });
