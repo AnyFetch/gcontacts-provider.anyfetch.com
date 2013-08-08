@@ -16,14 +16,15 @@
 
 var readline = require('readline');
 
-var googleapis = require('../lib/googleapis.js');
+var googleapis = require('googleapis');
+var keys = require('../keys');
 var OAuth2Client = googleapis.OAuth2Client;
 
 // Client ID and client secret are available at
 // https://code.google.com/apis/console
-var CLIENT_ID = 'YOUR CLIENT ID HERE';
-var CLIENT_SECRET = 'YOUR CLIENT SECRET HERE';
-var REDIRECT_URL = 'YOUR REDIRECT URL HERE';
+var CLIENT_ID = keys.CLIENT_ID;
+var CLIENT_SECRET = keys.CLIENT_SECRET;
+var REDIRECT_URL = keys.REDIRECT_URL;
 
 var rl = readline.createInterface({
   input: process.stdin,
@@ -59,7 +60,7 @@ function getUserProfile(client, authClient, userId, callback) {
 
 function printUserProfile(err, profile) {
   if (err) {
-    console.log('An error occurred');
+    console.log('An error occurred', err, '\np\n', profile);
   } else {
     console.log(profile.displayName, ':', profile.tagline);
   }
