@@ -5,5 +5,5 @@ module.exports = function router (server, handlers) {
   'use strict';
   
   // Connection phase
-  server.get('/credits', handlers.credits);
+  server.get('/test', handlers.test.test);
 };
