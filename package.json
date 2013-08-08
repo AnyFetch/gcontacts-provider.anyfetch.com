@@ -34,7 +34,8 @@
     "async": "0.2.x",
     "restify": "2.6.x",
     "mongoose": "3.6.x",
-    "mongoose-validator": "0.2.x"
+    "mongoose-validator": "0.2.x",
+    "googleapis": "0.4.x"
   },
   "devDependencies": {
     "mocha": "1.11.x",
