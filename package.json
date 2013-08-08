@@ -18,27 +18,23 @@
   "scripts": {
     "start": "node ./bin/server",
     "test": "NODE_ENV=test mocha -R spec -g providers",
-    "docs": "docco lib/papiel-core/*.js lib/papiel-core/handlers/*.js lib/papiel-core/models/*.js config/*.js app.js",
     "lint": "jshint lib/ test/ config/ bin/"
   },
   "main": "./lib/papiel-core",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Papiel/papiel_core"
+    "url": "https://github.com/Papiel/provider-google-contact"
   },
   "keywords": [
-    "papiel",
-    "big data",
-    "api",
-    "document processing"
+    "cluestr",
+    "provider",
+    "google contacts"
   ],
   "dependencies": {
     "async": "0.2.x",
     "restify": "2.6.x",
     "mongoose": "3.6.x",
-    "mongoose-validator": "0.2.x",
-    "bcrypt": "0.7.x",
-    "crypto": "0.10.x"
+    "mongoose-validator": "0.2.x"
   },
   "devDependencies": {
     "mocha": "1.11.x",
@@ -46,7 +42,6 @@
     "supertest": "0.7.x",
     "mocha-mongoose": "0.1.x",
     "factory-lady": "0.1.x",
-    "docco": "0.6.x",
     "jshint": "2.1.x"
   },
   "licence": "Copyright Papiel",
