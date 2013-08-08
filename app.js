@@ -5,7 +5,7 @@
 var restify       = require('restify'),
     mongoose      = require('mongoose'),
     configuration = require('./config/configuration.js'),
-    lib           = require("./lib/papiel-core"),
+    lib           = require("./lib/provider-google-contact"),
     handlers      = lib.handlers,
     middleware    = lib.middleware,
     server        = restify.createServer();
