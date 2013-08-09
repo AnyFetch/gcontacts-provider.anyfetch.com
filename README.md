@@ -1,11 +1,12 @@
 # Google Contact Cluestr Provider
+> Visit http://cluestr.com for details about Cluestr.
 
-Cluestr Provider for contacts stored in Google Contacts.
+Cluestr provider for contacts stored in Google Contacts.
 
 # How to install?
-Vagrant everything.
+Vagrant up everything (`vagrant up`, `vagrant ssh`).
 
-Create a `keys.js` file:
+Create a `keys.js` file on the directory root:
 
 ```
 // Google ids
@@ -42,6 +43,6 @@ Before running the test suite, you'll need to do:
 > node test-auth.js
 ```
 
-And follow the instructions. You'll get an `access_token` to paste in the `keys.js` file.
+Follow the link in your browser with your Google Account. You'll be redirected to `localhost` (server is not running, so you'll get an error). Copy-paste the `code` parameter in your shell, then paste the `access_token` in your `keys.js` file.
 
-After that, if you get `Uncaught Error: Wrong Authorization provided.`, your token is not valid anymore. Regenerate a new acces_token.
+After that, if you get `Uncaught Error: Wrong Authorization provided.`, your token is not valid anymore. Regenerate a new access_token.
