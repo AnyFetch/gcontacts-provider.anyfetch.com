@@ -18,6 +18,9 @@ describe("Init APIs endpoints", function () {
     });
   });
 
+  // TODO: get it running.
+  // Currently buggy. I beleive it is due to Google having some JS errrors on their redirection page.
+
   // describe("GET /init/callback", function () {    
   //   it("should be called after Google consentment page", function (done) {
   //     var browser = new Browser();

@@ -43,3 +43,5 @@ Before running the test suite, you'll need to do:
 ```
 
 And follow the instructions. You'll get an `access_token` to paste in the `keys.js` file.
+
+After that, if you get `Uncaught Error: Wrong Authorization provided.`, your token is not valid anymore. Regenerate a new acces_token.
