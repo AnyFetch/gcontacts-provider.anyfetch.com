@@ -13,6 +13,8 @@ var rl = readline.createInterface({
 
 var withLoggedClient = function(oauth2Client) {
   console.log("Access token to use: ", oauth2Client.credentials.access_token);
+
+  process.exit();
 }
 
 var getAccessToken = function(oauth2Client, callback) {
@@ -38,7 +40,7 @@ var getAccessToken = function(oauth2Client, callback) {
 
 googleapis.execute(function(err, client) {
   var oauth2Client =
-    new OAuth2Client(keys.CLIENT_ID, keys.CLIENT_SECRET, keys.REDIRECT_URL);
+    new OAuth2Client(keys.GOOGLE_ID, keys.GOOGLE_SECRET, keys.GOOGLE_URL);
 
   getAccessToken(oauth2Client, withLoggedClient);
 });
