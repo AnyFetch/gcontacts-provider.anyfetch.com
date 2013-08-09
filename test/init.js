@@ -17,7 +17,7 @@ describe("Init APIs endpoints", function () {
         .end(done);
     });
   });
-
+/*
   describe("GET /init/callback", function () {    
     it("should be called after Google consentment page", function (done) {
       var browser = new Browser();
@@ -61,5 +61,5 @@ describe("Init APIs endpoints", function () {
       }, done);
     });
   });
-
+*/
 });
