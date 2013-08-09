@@ -46,3 +46,5 @@ Before running the test suite, you'll need to do:
 Follow the link in your browser with your Google Account. You'll be redirected to `localhost` (server is not running, so you'll get an error). Copy-paste the `code` parameter in your shell, then paste the `access_token` in your `keys.js` file.
 
 After that, if you get `Uncaught Error: Wrong Authorization provided.`, your token is not valid anymore. Regenerate a new access_token.
+
+Support: `support@papiel.fr`.
