@@ -5,5 +5,6 @@ module.exports = function router (server, handlers) {
   'use strict';
   
   // Connection phase
-  server.get('/test', handlers.test.test);
+  server.get('/init/connect', handlers.init.connect);
+  server.get('/init/callback', handlers.init.callback);
 };
