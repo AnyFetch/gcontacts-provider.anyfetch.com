@@ -10,6 +10,7 @@ describe("Retrieve code", function () {
     retrieve(keys.ACCESS_TOKEN, function(users) {
       should.exist(users[0]);
       users[0].should.have.property('name');
+      console.log(users);
       done();
     });
   });

@@ -21,48 +21,51 @@ describe("Init APIs endpoints", function () {
   // TODO: get it running.
   // Currently buggy. I beleive it is due to Google having some JS errrors on their redirection page.
 
-  // describe("GET /init/callback", function () {    
-  //   it("should be called after Google consentment page", function (done) {
-  //     var browser = new Browser();
-  //     var googleUrl;
+  describe("GET /init/callback", function () {    
+    it.skip("should be called after Google consentment page", function (done) {
+      var browser = new Browser();
+      var googleUrl;
 
-  //     this.timeout(5000);
-  //     async.auto({
-  //       retrieveGoogleLocation: function(cb) {
-  //         var req = request(app).get('/init/connect')
-  //           .expect(302)
-  //           .expect('Location', /google\.com/)
-  //           .end(function(err, res) {
-  //           googleUrl = res.headers.location;
-  //           cb();
-  //         });
-  //       },
-  //       downloadGooglePage: ['retrieveGoogleLocation', function(cb) {
-  //         browser.visit(googleUrl, cb);
-  //       }],
-  //       loginToGoogle: ['downloadGooglePage', function(cb) {
-  //         browser.success.should.equal(true);
+      this.timeout(7000);
+      async.auto({
+        retrieveGoogleLocation: function(cb) {
+          var req = request(app).get('/init/connect')
+            .expect(302)
+            .expect('Location', /google\.com/)
+            .end(function(err, res) {
+            googleUrl = res.headers.location;
+            cb();
+          });
+        },
+        downloadGooglePage: ['retrieveGoogleLocation', function(cb) {
+          browser.visit(googleUrl, cb);
+        }],
+        loginToGoogle: ['downloadGooglePage', function(cb) {
+          browser.success.should.equal(true);
 
-  //         browser
-  //           .fill("#Email", keys.GOOGLE_LOGIN)
-  //           .fill("#Passwd", keys.GOOGLE_PASSWORD)
-  //           .pressButton("#signIn", cb);
-  //       }],
-  //       consentToGoogle: ['loginToGoogle', function(cb) {
-  //         browser.success.should.equal(true);
-  //         browser.pressButton("#submit_approve_access", cb);
-  //         cb();
-  //       }],
-  //       test: ['consentToGoogle', function(cb) {
-  //         cb();
-  //         // To this point, a token should have been created.
-  //         Token.count({}, function(err, count) {
-  //           console.log(count);
-  //           cb();
-  //         })
-  //       }]
-  //     }, done);
-  //   });
-  // });
+          browser
+            .fill("#Email", keys.GOOGLE_LOGIN)
+            .fill("#Passwd", keys.GOOGLE_PASSWORD)
+            .pressButton("#signIn", cb);
+        }],
+        testing: ['loginToGoogle', function(cb) {
+          cb();
+        }]
+        // consentToGoogle: ['------loginToGoogle', function(cb) {
+        //   browser.success.should.equal(true);
+        //   browser.pressButton("#submit_approve_access", cb);
+        //   cb();
+        // }],
+        // test: ['consentToGoogle', function(cb) {
+        //   cb();
+        //   // To this point, a token should have been created.
+        //   Token.count({}, function(err, count) {
+        //     console.log(count);
+        //     cb();
+        //   })
+        // }]
+      }, done);
+    });
+  });
 
 });
