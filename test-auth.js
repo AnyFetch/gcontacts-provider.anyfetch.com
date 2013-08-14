@@ -11,12 +11,14 @@ var rl = readline.createInterface({
   output: process.stdout
 });
 
+// Display access and refresh tokens.
 var withLoggedClient = function(oauth2Client) {
-  console.log("Paste this tokens in your keys.js file: ", oauth2Client.credentials.access_token);
+  console.log("Paste this tokens in your keys.js file: ", oauth2Client.credentials);
 
   process.exit();
 }
 
+// Retrieve a set of tokens from Google
 var getAccessToken = function(oauth2Client, callback) {
   // generate consent page url
   var url = oauth2Client.generateAuthUrl({
@@ -30,7 +32,6 @@ var getAccessToken = function(oauth2Client, callback) {
     // request access token
     oauth2Client.getToken(code, function(err, tokens) {
       // set tokens to the client
-      // TODO: tokens should be set by OAuth2 client.
       oauth2Client.credentials = tokens;
 
       callback(oauth2Client);
