@@ -13,4 +13,11 @@ describe("Retrieve code", function () {
       done();
     });
   });
+
+  it("should list contacts modified after specified date", function (done) {
+    retrieve(keys.GOOGLE_TOKENS, new Date(2020, 0, 1), function(users) {
+      users.should.have.lengthOf(0);
+      done();
+    });
+  });
 });
