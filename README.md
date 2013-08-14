@@ -19,7 +19,7 @@ module.exports.CLUESTR_ID = "{your_cluestr_id}";
 module.exports.CLUESTR_SECRET = "{your_cluestr_secret}";
 module.exports.CLUESTR_URL = "{cluestr_provider_url}"
 
-// Access token for test.
+// Google tokens for test.
 // See README.md
 module.exports.GOOGLE_TOKENS = '{see below}';
 ```
@@ -43,7 +43,7 @@ Before running the test suite, you'll need to do:
 > node test-auth.js
 ```
 
-Follow the link in your browser with your Google Account. You'll be redirected to `localhost` (server is not running, so you'll get an error). Copy-paste the `code` parameter in your shell, then paste the returned object in your `keys.js` file.
+Follow the link in your browser with your Google Account. You'll be redirected to `localhost` (server is not running, so you'll get an error). Copy-paste the `code` parameter in your shell, then paste the returned objects in your `keys.js` file.
 
 > Warning: a refresh token is only displayed once. If you get it wrong for some reason, you'll need to clear the permission for your app on https://www.google.com/settings/u/1/security
 
