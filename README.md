@@ -8,7 +8,7 @@ Vagrant up everything (`vagrant up`, `vagrant ssh`).
 
 Create a `keys.js` file on the directory root:
 
-```
+```javascript
 // Google ids
 module.exports.GOOGLE_ID = "{your_google_id}";
 module.exports.GOOGLE_SECRET = "{yourgoogle_secret}";
@@ -26,7 +26,7 @@ module.exports.GOOGLE_TOKENS = '{see below}';
 
 # How does it works?
 Cluestr Core will call `/init/connect` with cluestr Oauth-tokens. The user will be transparently redirected to Google consentment page.
-Google will then call us back on `/init/callback` with a `code` parameter. We'll trade the code for an `access_token` and store it in the database, along with the Cluestr tokens.
+Google will then call us back on `/init/callback` with a `code` parameter. We'll trade the `code` for an `access_token` and a `refresh_token` and store it in the database, along with the Cluestr tokens.
 
 We can now sync datas between Google and Cluestr.
 
