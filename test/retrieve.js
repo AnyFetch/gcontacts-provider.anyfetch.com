@@ -1,8 +1,7 @@
 'use strict';
 
-var request = require('supertest')
-var should = require('should')
-var keys = require('../keys.js')
+var should = require('should');
+var keys = require('../keys.js');
 var retrieve = require('../lib/provider-google-contact/helpers/retrieve.js');
 
 describe("Retrieve code", function () {

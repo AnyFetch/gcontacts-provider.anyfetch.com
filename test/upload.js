@@ -1,13 +1,11 @@
 'use strict';
 
-var request = require('supertest')
-var should = require('should')
-var async = require('async')
-var app = require('../app.js');
+var should = require('should');
+var async = require('async');
+
 var keys = require('../keys.js');
-var Browser = require('zombie');
 var providerGoogleContact = require('../lib/provider-google-contact');
-var Token = providerGoogleContact.models.Token
+var Token = providerGoogleContact.models.Token;
 
 describe("Upload code", function () {
   it("should not raise any exception", function (done) {
@@ -27,7 +25,7 @@ describe("Upload code", function () {
             throw err;
           }
           cb();
-        })
+        });
       },
       function(cb) {
         providerGoogleContact.handlers.upload(cb);

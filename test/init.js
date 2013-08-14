@@ -1,15 +1,15 @@
 'use strict';
 
-var request = require('supertest')
-var should = require('should')
-var async = require('async')
+var request = require('supertest');
+var should = require('should');
+var async = require('async');
+var Browser = require('zombie');
+
 var app = require('../app.js');
 var keys = require('../keys.js');
-var Browser = require('zombie');
-var Token = require('../lib/provider-google-contact/models/token.js');
 
 describe("Init APIs endpoints", function () {
-  describe("GET /init/connect", function () {    
+  describe("GET /init/connect", function () {
     it("should redirect to Google", function (done) {
       var req = request(app).get('/init/connect')
         .expect(302)
@@ -20,7 +20,7 @@ describe("Init APIs endpoints", function () {
 
   // TODO: get it running.
   // Currently buggy. I believe it is due to Google having some JS errors on their redirection page.
-  describe("GET /init/callback", function () {    
+  describe("GET /init/callback", function () {
     it.skip("should be called after Google consentment page", function (done) {
       var browser = new Browser();
       var googleUrl;
@@ -32,6 +32,10 @@ describe("Init APIs endpoints", function () {
             .expect(302)
             .expect('Location', /google\.com/)
             .end(function(err, res) {
+            if(err) {
+              throw err;
+            }
+            
             googleUrl = res.headers.location;
             cb();
           });
