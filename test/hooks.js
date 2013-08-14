@@ -1,11 +1,10 @@
 'use strict';
-var mongoose = require('mongoose'),
-	configuration = require('../config/configuration.js'),
-	clearDB  = require('mocha-mongoose')(configuration.mongo_url, {noClear: true});
+var mongoose = require('mongoose');
+var configuration = require('../config/configuration.js');
+var clearDB  = require('mocha-mongoose')(configuration.mongo_url, {noClear: true});
 
-before(function(done) {
+beforeEach(function(done) {
 	clearDB(function() {
-		console.log("DB cleared!");
 		done();
 	});
 });

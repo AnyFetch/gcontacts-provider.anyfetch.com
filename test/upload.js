@@ -16,9 +16,9 @@ describe("Upload code", function () {
     // For faster test, we won't upload.
     keys.CLUESTR_URL = 'http://test/';
 
-    var token = new Token({googleTokens:{
-      access_token: keys.ACCESS_TOKEN
-    }});
+    var token = new Token({
+      googleTokens: keys.GOOGLE_TOKENS
+    });
 
     async.series([
       function(cb) {
