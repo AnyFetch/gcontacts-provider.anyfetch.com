@@ -21,7 +21,7 @@ module.exports.CLUESTR_URL = "{cluestr_provider_url}"
 
 // Access token for test.
 // See README.md
-module.exports.ACCESS_TOKEN = '{see below}';
+module.exports.GOOGLE_TOKENS = '{see below}';
 ```
 
 # How does it works?
@@ -43,8 +43,8 @@ Before running the test suite, you'll need to do:
 > node test-auth.js
 ```
 
-Follow the link in your browser with your Google Account. You'll be redirected to `localhost` (server is not running, so you'll get an error). Copy-paste the `code` parameter in your shell, then paste the `access_token` in your `keys.js` file.
+Follow the link in your browser with your Google Account. You'll be redirected to `localhost` (server is not running, so you'll get an error). Copy-paste the `code` parameter in your shell, then paste the returned object in your `keys.js` file.
 
-After that, if you get `Uncaught Error: Wrong Authorization provided.`, your token is not valid anymore. Regenerate a new access_token.
+> Warning: a refresh token is only displayed once. If you get it wrong for some reason, you'll need to clear the permission for your app on https://www.google.com/settings/u/1/security
 
 Support: `support@papiel.fr`.

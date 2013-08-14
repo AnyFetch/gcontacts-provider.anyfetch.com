@@ -12,7 +12,7 @@ var rl = readline.createInterface({
 });
 
 var withLoggedClient = function(oauth2Client) {
-  console.log("Access token to use: ", oauth2Client.credentials.access_token);
+  console.log("Paste this tokens in your keys.js file: ", oauth2Client.credentials.access_token);
 
   process.exit();
 }
