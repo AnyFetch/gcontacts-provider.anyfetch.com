@@ -9,5 +9,5 @@ var configuration = require("../config/configuration.js"),
 // Start the server
 server.listen(configuration.port, function() {
   'use strict';
-  console.log("Papiel core started at " + server.url);
+  console.log("Provider google contact started at " + server.url);
 });
