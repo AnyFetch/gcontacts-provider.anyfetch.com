@@ -5,7 +5,7 @@ var config = require('../config/configuration.js');
 var retrieve = require('../lib/provider-google-contact/helpers/retrieve.js');
 
 describe("Retrieve code", function () {
-  it("should list contacts", function (done) {
+  it("azer should list contacts", function (done) {
     retrieve(config.test_refresh_token, new Date(1970, 0, 1), function(users) {
       should.exist(users[0]);
       users[0].should.have.property('name');
