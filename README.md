@@ -6,22 +6,25 @@ Cluestr provider for contacts stored in Google Contacts.
 # How to install?
 Vagrant up everything (`vagrant up`, `vagrant ssh`).
 
-Create a `keys.js` file on the directory root:
+You'll need to define some environment variables
 
-```javascript
-// Google ids
-module.exports.GOOGLE_ID = "{your_google_id}";
-module.exports.GOOGLE_SECRET = "{yourgoogle_secret}";
-module.exports.GOOGLE_URL = "{your_redirect_url}";
+```shell
+# Go to https://code.google.com/apis/console/b/0/?pli=1#access to ask from app id and secret
+export GOOGLE_CONTACTS_ID={google-app-id}
+export GOOGLE_CONTACTS_SECRET={google-app-secret}
 
-// Cluestr ids
-module.exports.CLUESTR_ID = "{your_cluestr_id}";
-module.exports.CLUESTR_SECRET = "{your_cluestr_secret}";
-module.exports.CLUESTR_URL = "{cluestr_provider_url}"
+# Callback after google consent, most probably http://your-host/init/callback
+export GOOGLE_CONTACTS_CALLBACK_URL={callback-after-google-consent}
 
-// Google tokens for test.
-// See README.md
-module.exports.GOOGLE_TOKENS = '{see below}';
+# Cluestr app id and secret
+export GOOGLE_CONTACTS_CLUESTR_ID={cluestr-app-id}
+export GOOGLE_CONTACTS_CLUESTR_SECRET={cluestr-app-secret}
+
+# Endpoint in cluestr for data uploading.
+export GOOGLE_CONTACTS_CLUESTR_URL="http://cluestr.com/providers/documents"
+
+# See below for details
+export GOOGLE_CONTACTS_TEST_REFRESH_TOKEN={refresh-token}
 ```
 
 # How does it works?

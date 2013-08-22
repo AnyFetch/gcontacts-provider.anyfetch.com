@@ -6,7 +6,7 @@ var async = require('async');
 var Browser = require('zombie');
 
 var app = require('../app.js');
-var keys = require('../keys.js');
+var config = require('../config/configuration.js');
 
 describe("Init APIs endpoints", function () {
   describe("GET /init/connect", function () {
@@ -47,8 +47,8 @@ describe("Init APIs endpoints", function () {
           browser.success.should.equal(true);
 
           browser
-            .fill("#Email", keys.GOOGLE_LOGIN)
-            .fill("#Passwd", keys.GOOGLE_PASSWORD)
+            .fill("#Email", config.google_login)
+            .fill("#Passwd", config.google_password)
             .pressButton("#signIn", cb);
         }],
         testing: ['loginToGoogle', function(cb) {
