@@ -22,5 +22,5 @@ module.exports = {
   cluestr_secret: process.env.GOOGLE_CONTACTS_CLUESTR_SECRET,
   cluestr_url: process.env.GOOGLE_CONTACTS_CLUESTR_URL,
 
-  test_tokens: process.env.GOOGLE_CONTACTS_TEST_TOKENS
+  test_refresh_token: process.env.GOOGLE_CONTACTS_TEST_REFRESH_TOKEN
 };

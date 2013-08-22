@@ -15,7 +15,7 @@ describe("Upload code", function () {
     config.cluestr_url = 'http://test/';
 
     var token = new Token({
-      googleTokens: config.google_tokens
+      googleToken: config.test_refresh_token
     });
 
     async.series([
