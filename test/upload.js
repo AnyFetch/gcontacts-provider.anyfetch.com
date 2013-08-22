@@ -3,7 +3,7 @@
 var should = require('should');
 var async = require('async');
 
-var keys = require('../keys.js');
+var config = require('../config/configuration.js');
 var providerGoogleContact = require('../lib/provider-google-contact');
 var Token = providerGoogleContact.models.Token;
 
@@ -12,10 +12,10 @@ describe("Upload code", function () {
     // It is quite hard to really test the upload code,
     // Therefore we'll only check no errors are raised.
     // For faster test, we won't upload.
-    keys.CLUESTR_URL = 'http://test/';
+    config.cluestr_url = 'http://test/';
 
     var token = new Token({
-      googleTokens: keys.GOOGLE_TOKENS
+      googleToken: config.test_refresh_token
     });
 
     async.series([
