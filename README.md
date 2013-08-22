@@ -10,24 +10,22 @@ You'll need to define some environment variables
 
 ```shell
 # Go to https://code.google.com/apis/console/b/0/?pli=1#access to ask from app id and secret
-GOOGLE_CONTACTS_ID={google-app-id}
-GOOGLE_CONTACTS_SECRET={google-app-secret}
+export GOOGLE_CONTACTS_ID={google-app-id}
+export GOOGLE_CONTACTS_SECRET={google-app-secret}
 
 # Callback after google consent, most probably http://your-host/init/callback
-GOOGLE_CONTACTS_CALLBACK_URL={callback-after-google-consent}
+export GOOGLE_CONTACTS_CALLBACK_URL={callback-after-google-consent}
 
 # Cluestr app id and secret
-GOOGLE_CONTACTS_CLUESTR_ID={cluestr-app-id}
-GOOGLE_CONTACTS_CLUESTR_SECRET={cluestr-app-secret}
+export GOOGLE_CONTACTS_CLUESTR_ID={cluestr-app-id}
+export GOOGLE_CONTACTS_CLUESTR_SECRET={cluestr-app-secret}
 
 # Endpoint in cluestr for data uploading.
-GOOGLE_CONTACTS_CLUESTR_URL="http://cluestr.com/providers/documents"
+export GOOGLE_CONTACTS_CLUESTR_URL="http://cluestr.com/providers/documents"
 
 # See below for details
-GOOGLE_CONTACTS_TEST_REFRESH_TOKEN={refresh-token}
+export GOOGLE_CONTACTS_TEST_REFRESH_TOKEN={refresh-token}
 ```
-
-For instance, save this in a `keys.sh` file (already in .gitignore) and before working in the project do `source ./keys.sh`
 
 # How does it works?
 Cluestr Core will call `/init/connect` with cluestr Oauth-tokens. The user will be transparently redirected to Google consentment page.

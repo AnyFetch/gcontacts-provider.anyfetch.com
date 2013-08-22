@@ -15,7 +15,11 @@ var rl = readline.createInterface({
 
 // Display access and refresh tokens.
 var withLoggedClient = function(oauth2Client) {
-  console.log("Set this value in your GOOGLE_CONTACTS_TEST_REFRESH_TOKEN environment: ", oauth2Client.credentials.refresh_token);
+  if(!oauth2Client.credentials.refresh_token) {
+    console.log("You already have a refresh token, or something went amiss. Please go to your Google Acount and remove the authorization for your app.");
+  } else {
+    console.log("Set this value in your GOOGLE_CONTACTS_TEST_REFRESH_TOKEN environment: ", oauth2Client.credentials.refresh_token);
+  }
 
   process.exit();
 };
@@ -43,7 +47,7 @@ var getAccessToken = function(oauth2Client, callback) {
 
 googleapis.execute(function(err, client) {
   var oauth2Client =
-    new OAuth2Client(config.google_id, config.google_secret, config.google_url);
+    new OAuth2Client(config.google_id, config.google_secret, config.google_callback);
 
   getAccessToken(oauth2Client, withLoggedClient);
 });
