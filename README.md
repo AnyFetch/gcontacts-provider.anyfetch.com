@@ -27,6 +27,8 @@ GOOGLE_CONTACTS_CLUESTR_URL="http://cluestr.com/providers/documents"
 GOOGLE_CONTACTS_TEST_REFRESH_TOKEN={refresh-token}
 ```
 
+For instance, save this in a `keys.sh` file (already in .gitignore) and before working in the project do `source ./keys.sh`
+
 # How does it works?
 Cluestr Core will call `/init/connect` with cluestr Oauth-tokens. The user will be transparently redirected to Google consentment page.
 Google will then call us back on `/init/callback` with a `code` parameter. We'll trade the `code` for an `access_token` and a `refresh_token` and store it in the database, along with the Cluestr tokens.
