@@ -20,9 +20,6 @@ export GOOGLE_CONTACTS_CALLBACK_URL={callback-after-google-consent}
 export GOOGLE_CONTACTS_CLUESTR_ID={cluestr-app-id}
 export GOOGLE_CONTACTS_CLUESTR_SECRET={cluestr-app-secret}
 
-# Endpoint in cluestr for data uploading.
-export GOOGLE_CONTACTS_CLUESTR_URL="http://cluestr.com/providers/documents"
-
 # See below for details
 export GOOGLE_CONTACTS_TEST_REFRESH_TOKEN={refresh-token}
 ```
