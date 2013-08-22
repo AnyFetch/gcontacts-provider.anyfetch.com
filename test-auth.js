@@ -4,7 +4,7 @@ var app = require('./app.js');
 var readline = require('readline');
 var request = require('request');
 var googleapis = require('googleapis');
-var keys = require('./keys');
+var config = require('./config/configuration.js');
 var OAuth2Client = googleapis.OAuth2Client;
 
 
@@ -43,7 +43,7 @@ var getAccessToken = function(oauth2Client, callback) {
 
 googleapis.execute(function(err, client) {
   var oauth2Client =
-    new OAuth2Client(keys.GOOGLE_ID, keys.GOOGLE_SECRET, keys.GOOGLE_URL);
+    new OAuth2Client(config.google_id, config.google_secret, config.google_url);
 
   getAccessToken(oauth2Client, withLoggedClient);
 });
