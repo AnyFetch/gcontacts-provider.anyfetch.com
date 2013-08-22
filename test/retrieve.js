@@ -14,7 +14,7 @@ describe("Retrieve code", function () {
   });
 
   it("should list contacts modified after specified date", function (done) {
-    retrieve(config.test_refresh_token, new Date(2020, 0, 1), function(users) {
+    retrieve(config.test_refresh_token, new Date(2020, 7, 22), function(users) {
       users.should.have.lengthOf(0);
       done();
     });
