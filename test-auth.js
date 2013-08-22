@@ -1,3 +1,5 @@
+'use strict';
+
 var app = require('./app.js');
 var readline = require('readline');
 var request = require('request');
@@ -13,10 +15,10 @@ var rl = readline.createInterface({
 
 // Display access and refresh tokens.
 var withLoggedClient = function(oauth2Client) {
-  console.log("Paste this tokens in your keys.js file: ", oauth2Client.credentials);
+  console.log("Set this value in your GOOGLE_CONTACTS_TEST_REFRESH_TOKEN environment: ", oauth2Client.credentials.refresh_token);
 
   process.exit();
-}
+};
 
 // Retrieve a set of tokens from Google
 var getAccessToken = function(oauth2Client, callback) {
@@ -37,7 +39,7 @@ var getAccessToken = function(oauth2Client, callback) {
       callback(oauth2Client);
     });
   });
-}
+};
 
 googleapis.execute(function(err, client) {
   var oauth2Client =
