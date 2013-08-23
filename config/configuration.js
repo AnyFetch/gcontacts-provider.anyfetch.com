@@ -1,14 +1,23 @@
-// # config/configuration
-// Defines application's settings
+/**
+ * @file Defines Core application's settings.
+ *
+ * Will set the path to Mongo, the port on which to run the app and ElasticSearch config.
+ * Most of the configuration can be done using system environment variables.
+ */
 
-// Process some values
+// Cluestr Core config
+// node_env can either be "development" or "production"
 var node_env = process.env.NODE_ENV || "development";
+
+// Port to run the app on. 8000 for development
+// (Vagrant syncs this port)
+// 80 for production
 var default_port = 8000;
 if(node_env === "production") {
   default_port = 80;
 }
 
-// Exports configuration
+// Exports configuration for use by app.js
 module.exports = {
   env: node_env,
   port: process.env.PORT || default_port,
@@ -20,7 +29,6 @@ module.exports = {
 
   cluestr_id: process.env.GOOGLE_CONTACTS_CLUESTR_ID,
   cluestr_secret: process.env.GOOGLE_CONTACTS_CLUESTR_SECRET,
-  cluestr_url: process.env.GOOGLE_CONTACTS_CLUESTR_URL,
 
   test_refresh_token: process.env.GOOGLE_CONTACTS_TEST_REFRESH_TOKEN
 };

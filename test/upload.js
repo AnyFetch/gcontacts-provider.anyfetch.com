@@ -28,7 +28,7 @@ describe("Upload code", function () {
         });
       },
       function(cb) {
-        providerGoogleContact.handlers.upload(cb);
+        providerGoogleContact.helpers.upload(cb);
       }
     ], done);
   });
