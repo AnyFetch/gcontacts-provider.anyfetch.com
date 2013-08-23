@@ -15,10 +15,12 @@ describe("Upload code", function () {
     config.cluestr_url = 'http://test/';
 
     var token = new Token({
+      cluestrToken: '123TEST',
       googleToken: config.test_refresh_token
     });
 
     async.series([
+      // Create a fake CluestrToken
       function(cb) {
         token.save(function(err) {
           if(err) {
@@ -27,6 +29,7 @@ describe("Upload code", function () {
           cb();
         });
       },
+      // Retrieve associated contacts
       function(cb) {
         providerGoogleContact.helpers.upload(cb);
       }
