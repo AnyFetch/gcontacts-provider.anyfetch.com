@@ -10,6 +10,7 @@ var config = require('../config/configuration.js');
 
 describe("Init APIs endpoints", function () {
   describe("GET /init/connect", function () {
+    // One day or another, we'll have to remove this since we won't be able to mock Cluestr server.
     it("should redirect to Google", function (done) {
       var req = request(app).get('/init/connect?code=123')
         .expect(302)
