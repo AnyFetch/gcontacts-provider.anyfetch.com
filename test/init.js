@@ -11,7 +11,7 @@ var config = require('../config/configuration.js');
 describe("Init APIs endpoints", function () {
   describe("GET /init/connect", function () {
     it("should redirect to Google", function (done) {
-      var req = request(app).get('/init/connect')
+      var req = request(app).get('/init/connect?code=123')
         .expect(302)
         .expect('Location', /google\.com/)
         .end(done);
