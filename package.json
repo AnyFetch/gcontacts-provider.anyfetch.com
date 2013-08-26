@@ -18,7 +18,8 @@
   "scripts": {
     "start": "node ./bin/server",
     "test": "NODE_ENV=test mocha -R spec -t 2500",
-    "lint": "jshint lib/ test/ config/ bin/"
+    "lint": "jshint lib/ test/ config/ bin/",
+    "upload": "node script/upload.js"
   },
   "main": "./lib/provider-google-contact",
   "repository": {
