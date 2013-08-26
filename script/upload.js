@@ -10,10 +10,10 @@ var providerGoogleContact = require('../lib/provider-google-contact');
 
 providerGoogleContact.helpers.upload(function(err) {
   if(err) {
-     throw err;
+    throw err;
   }
   
   console.log("Contacts logged", new Date());
 
-  process.exit()
+  process.exit();
 });
