@@ -2,21 +2,31 @@
 
 'use strict';
 /**
- * @file Upload datas from all tokens to Cluestr
+ * @file Regularly upload datas from all tokens to Cluestr
  *
- * This script can be run with a cron.
+ * This script relaunches itself.
  */
  
+var REFRESH_TIME = 60 * 60 * 1000;
 
 require('../app.js');
 var providerGoogleContact = require('../lib/provider-google-contact');
 
-providerGoogleContact.helpers.upload(function(err) {
+function cb(err) {
   if(err) {
-    throw err;
+    console.err(err);
+  } else {
+    console.log("Contacts logged", new Date());
   }
-  
-  console.log("Contacts logged", new Date());
 
-  process.exit();
-});
+  var uploader = function() {
+    providerGoogleContact.helpers.upload(cb);
+  };
+
+  setTimeout(uploader, REFRESH_TIME);
+}
+
+console.log("Starting GContacts pseudo-daemon.");
+
+// First run
+providerGoogleContact.helpers.upload(cb);
