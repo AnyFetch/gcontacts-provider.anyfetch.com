@@ -1,0 +1,12 @@
+language: node_js
+services: mongodb
+node_js:
+- '0.10'
+before_script: npm install --dev
+script: npm test
+env:
+  global:
+  - secure: g/0yToMFfztEgCwEEbzL0DeX4GRiVMgEOTf2cW4q1plBoVVKh1hT0HILAzajxfNI8rHGq0Zt1jFV/kDWz1BQUAwacYSuswJAJhme+1OCFDgW24wReHtX0m7vkqSG3X3FaPIVCA+E6U57g4BaMmrrosSFOrQtZBWdPTL0FwTA260=
+  - secure: OZFeEAtn4PveljIVrV/jzpWNeymVnzWw/mXJVV6R5YKZFa0TcklPyDogMmbOtsuEFXhwZTXFJBxsFPVt0ZgsN1y7N5gcfCIsDN1RT/pESfohXfAaQldono3uyk2gIC62LN+RooZIPbHhekxGFT+9Ff0hkGlMEt0C2+MLTC+pXrI=
+  - secure: QF3+EIHhNG3TVkux3fRem/NMx9mPSRM6zoJZbFSzbVkTqGNpPQTisR358Lh7jUrGgwdkKphfYXUa6Qfezu6fP3xwDY5Lm7+55IVDpKsNU+l3OdrIy6Rb/VfefDlONf5WPaJoo8sBKhCPjHCeqhtkx4xQMEnkO8Kdv9flgQknOC0=
+  - secure: NGUAo57SIKCjTZI3HvYN9gDUQeLXxTXdGe2KtA03uePXtPlzgiajeuZJMRpcL10qxs8vApQRPxQlD33yTIjpHA9xV/EEUQiU7Ea4tjCMg9PZQNFK6Sp+YBmpLBXMQKWNICiw33RZRdRUuTaPwlZ+84NcsLDgTeJ4HooUYpIwaJ0=
