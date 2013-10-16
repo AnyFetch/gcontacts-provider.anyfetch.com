@@ -8,7 +8,7 @@
 
 
 // Load configuration
-var configuration = require("../config/configuration.js");
+var config = require("../config/configuration.js");
 var server = require('../app.js');
 
 // Start the server
