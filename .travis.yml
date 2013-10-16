@@ -8,6 +8,8 @@ env:
   global:
   - GOOGLE_CONTACTS_CONNECT_URL="http://localhost:8000/init/connect"
   - GOOGLE_CONTACTS_CALLBACK_URL="http://localhost:8000/init/callback"
+  - GOOGLE_CONTACTS_CLUESTR_ID="not-used"
+  - GOOGLE_CONTACTS_CLUESTR_SECRET="not-used"
   - secure: g/0yToMFfztEgCwEEbzL0DeX4GRiVMgEOTf2cW4q1plBoVVKh1hT0HILAzajxfNI8rHGq0Zt1jFV/kDWz1BQUAwacYSuswJAJhme+1OCFDgW24wReHtX0m7vkqSG3X3FaPIVCA+E6U57g4BaMmrrosSFOrQtZBWdPTL0FwTA260=
   - secure: OZFeEAtn4PveljIVrV/jzpWNeymVnzWw/mXJVV6R5YKZFa0TcklPyDogMmbOtsuEFXhwZTXFJBxsFPVt0ZgsN1y7N5gcfCIsDN1RT/pESfohXfAaQldono3uyk2gIC62LN+RooZIPbHhekxGFT+9Ff0hkGlMEt0C2+MLTC+pXrI=
   - secure: J0PtU/A+cMkh8Duo1GGzrYKYOoKLpXt5vEPFuNFJp6WdMm+qfu2LQ8QDp53iytoT5xicgNLqdQvBT/Zy9p3emCwTi4qbfva7jPe73B4gc1cC+VL9kX0zD51YRFtxo4YAKbP3kEXJCVrdYQNv/aaCKwiux6mJudDsygssw3Ngbtk=
