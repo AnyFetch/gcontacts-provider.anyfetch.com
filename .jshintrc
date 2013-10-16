@@ -14,7 +14,7 @@
   "undef"         : true,
   "strict"        : true,
   "trailing"      : true,
-  "unused"        : false,
+  "unused"        : true,
   "loopfunc"      : true,
   
   "asi"           : false,
@@ -28,6 +28,7 @@
   "forin"         : false,
   "funcscope"     : false,
   "globalstrict"  : false,
+  "quotmark"      : false,
   "iterator"      : false,
   "lastsemic"     : false,
   "laxbreak"      : false,
