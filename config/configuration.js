@@ -20,7 +20,6 @@ if(node_env === "production") {
 module.exports = {
   env: node_env,
   port: process.env.PORT || default_port,
-  mongo_url: process.env.MONGO_URL || ("mongodb://localhost/provider-google-contact-" + node_env),
 
   google_id: process.env.GOOGLE_CONTACTS_ID,
   google_secret: process.env.GOOGLE_CONTACTS_SECRET,
