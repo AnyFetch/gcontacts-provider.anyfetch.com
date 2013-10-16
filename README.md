@@ -15,9 +15,10 @@ export GOOGLE_CONTACTS_SECRET={google-app-secret}
 
 # Callback after google consent, most probably http://your-host/init/callback
 # Don't forget to register this URL in your Google API console.
-export GOOGLE_CONTACTS_CALLBACK_URL={callback-after-google-consent}
+export GOOGLE_CONTACTS_CALLBACK_URL={callback-after-google-consent /init/callback}
 
 # Cluestr app id and secret
+export GOOGLE_CONTACTS_CONNECT_URL="{callback from cluestr /init/connect}"
 export GOOGLE_CONTACTS_CLUESTR_ID={cluestr-app-id}
 export GOOGLE_CONTACTS_CLUESTR_SECRET={cluestr-app-secret}
 

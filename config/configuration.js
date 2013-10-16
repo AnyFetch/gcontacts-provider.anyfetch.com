@@ -25,6 +25,7 @@ module.exports = {
   google_secret: process.env.GOOGLE_CONTACTS_SECRET,
   google_callback: process.env.GOOGLE_CONTACTS_CALLBACK_URL,
 
+  connect_url: process.env.GOOGLE_CONTACTS_CONNECT_URL,
   cluestr_id: process.env.GOOGLE_CONTACTS_CLUESTR_ID,
   cluestr_secret: process.env.GOOGLE_CONTACTS_CLUESTR_SECRET,
 
