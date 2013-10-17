@@ -1,4 +1,4 @@
-# Google Contact Cluestr Provider
+# Google Contacts Cluestr Provider
 > Visit http://cluestr.com for details about Cluestr.
 
 Cluestr provider for contacts stored in Google Contacts.
