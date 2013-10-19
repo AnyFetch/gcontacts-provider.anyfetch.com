@@ -2,10 +2,7 @@
 
 // Load configuration and initialize server
 var cluestrProvider = require('cluestr-provider');
-
-var providerGoogleContact = require('./lib/provider-google-contact');
-
-var serverConfig = providerGoogleContact;
+var serverConfig = require('./lib/provider-google-contact');
 
 var server = cluestrProvider.createServer(serverConfig);
 
