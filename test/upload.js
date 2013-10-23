@@ -44,7 +44,7 @@ describe("Workflow", function () {
       .send({
         access_token: 'fake_gc_access_token'
       })
-      .expect(204)
+      .expect(202)
       .end(function(err) {
         if(err) {
           throw err;
