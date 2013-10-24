@@ -10,6 +10,8 @@ var serverConfig = require('../lib/provider-google-contact');
 
 
 describe("Workflow", function () {
+  before(CluestrProvider.debug.cleanTokens);
+
 // Create a fake HTTP server
   process.env.CLUESTR_SERVER = 'http://localhost:1337';
 
@@ -28,6 +30,7 @@ describe("Workflow", function () {
   it("should upload datas to Cluestr", function (done) {
     var originalQueueWorker = serverConfig.queueWorker;
     serverConfig.queueWorker = function(task, cluestrClient, refreshToken, cb) {
+      console.log(task.url);
       task.should.have.property('url');
       task.should.have.property('id');
 
