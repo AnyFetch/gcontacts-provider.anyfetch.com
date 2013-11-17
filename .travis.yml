@@ -17,4 +17,4 @@ deploy:
   provider: heroku
   app: provider-google-contact
   api_key:
-    secure: pwas9d3E6tyUStTJ/79v1Ywo5FmBeV7mxEK9GBKI9IQjheo5sAPGlqwAsyvOM+bb1v+0G3WrY7QI+IIxEoLYTrK4uUtbYzS6raiKJRmB7arpr+7qVi2a6Vg2u5d0/79u0ZanlI0nYAF1Sptx1Z8e0nmbBeoDrMo/qUKWo3cT7es=
+    secure: bpl45TG8NP7aTCOQwMHTLEiP1R8sDrvh9ESUbiPwlNYvk5ISXz7HQx/yTFFKkJ14UbPZbOqcxCxMKfaWBzkhegvV7iz4imcYUuK3Hbz6T1LhkfDULlPc4ENJerHejzIEmhux1kNiCsTKKlPGa5F4zsCfiofqEfmTSOaowkdURNk=
