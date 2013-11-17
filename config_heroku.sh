@@ -6,7 +6,7 @@ heroku config:set MONGO_URL="$MONGO_URL"
 # OAuth
 source ./keys.sh
 
-URL="http://provider-google-contact.herokuapp.com"
+URL="https://provider-google-contact.herokuapp.com"
 
 heroku config:set GOOGLE_CONTACTS_ID="$GOOGLE_CONTACTS_ID"
 heroku config:set GOOGLE_CONTACTS_SECRET="$GOOGLE_CONTACTS_SECRET"
