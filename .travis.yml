@@ -6,15 +6,15 @@ before_script: npm install --dev
 script: npm test
 env:
   global:
-  - GOOGLE_CONTACTS_CONNECT_URL="http://localhost:8000/init/connect"
-  - GOOGLE_CONTACTS_CALLBACK_URL="http://localhost:8000/init/callback"
-  - GOOGLE_CONTACTS_CLUESTR_ID="not-used"
-  - GOOGLE_CONTACTS_CLUESTR_SECRET="not-used"
-  - secure: g/0yToMFfztEgCwEEbzL0DeX4GRiVMgEOTf2cW4q1plBoVVKh1hT0HILAzajxfNI8rHGq0Zt1jFV/kDWz1BQUAwacYSuswJAJhme+1OCFDgW24wReHtX0m7vkqSG3X3FaPIVCA+E6U57g4BaMmrrosSFOrQtZBWdPTL0FwTA260=
-  - secure: OZFeEAtn4PveljIVrV/jzpWNeymVnzWw/mXJVV6R5YKZFa0TcklPyDogMmbOtsuEFXhwZTXFJBxsFPVt0ZgsN1y7N5gcfCIsDN1RT/pESfohXfAaQldono3uyk2gIC62LN+RooZIPbHhekxGFT+9Ff0hkGlMEt0C2+MLTC+pXrI=
-  - secure: J0PtU/A+cMkh8Duo1GGzrYKYOoKLpXt5vEPFuNFJp6WdMm+qfu2LQ8QDp53iytoT5xicgNLqdQvBT/Zy9p3emCwTi4qbfva7jPe73B4gc1cC+VL9kX0zD51YRFtxo4YAKbP3kEXJCVrdYQNv/aaCKwiux6mJudDsygssw3Ngbtk=
+  - GCONTACTS_CONNECT_URL="http://localhost:8000/init/connect"
+  - GCONTACTS_CALLBACK_URL="http://localhost:8000/init/callback"
+  - GCONTACTS_CLUESTR_ID="not-used"
+  - GCONTACTS_CLUESTR_SECRET="not-used"
+  - secure: AAkhYBNVVY9iSmedw3lY4pYBfs7SfADp1LOFeIRqTTiVz/LhUqKYVbHSWPu4Sp5w5T+7vHcOqsEt4VHx5Fh055HFPGx/5ljVprW7dae2kDO4yAJuAb4NZzh0xLcvlPFRkiNKw/Wex8W1sCWJ5mxAcC2lbIwHjRi1kTMjgfzrkbw=
+  - secure: B/suIgnuxmvd2SifyJh9DxIJXBjM/CWMDsj4lPkBczcjP3kyNzmSrQnEdeALIZdnmLzn1+KWCoG5XbZAZzdE6M2cH0sE3js65jSIKXTlAm/Qix1fTTgLHl1IJKHnaEMg62YfDbGx7vrbTTLcg+r/eRqKWnryY2PEtwzUTWTmoVc=
+  - secure: bEo5kkn1BAh0M47+vld3gsxvL0z/oDCeWucp8/YzSpOdk9KDM95oLxv+oWP0ZNQWCSk8Z/KLlJwAQr1oPjBJEdKuzSG+V0xt81CQWgLhOZlJgZZB+8sXg2z4sQ8mge9IEijKzViq8XKlL66DwOq3NeSDGOLSaZU5hD9ixmX0bbY=
 deploy:
   provider: heroku
-  app: anyfetch-provider-google-contact
+  app: anyfetch-provider-gcontact
   api_key:
     secure: bpl45TG8NP7aTCOQwMHTLEiP1R8sDrvh9ESUbiPwlNYvk5ISXz7HQx/yTFFKkJ14UbPZbOqcxCxMKfaWBzkhegvV7iz4imcYUuK3Hbz6T1LhkfDULlPc4ENJerHejzIEmhux1kNiCsTKKlPGa5F4zsCfiofqEfmTSOaowkdURNk=

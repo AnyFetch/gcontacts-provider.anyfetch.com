@@ -22,13 +22,13 @@ module.exports = {
   port: process.env.PORT || default_port,
   workers: process.env.WORKERS || 1,
 
-  google_id: process.env.GOOGLE_CONTACTS_ID,
-  google_secret: process.env.GOOGLE_CONTACTS_SECRET,
-  google_callback: process.env.GOOGLE_CONTACTS_CALLBACK_URL,
+  google_id: process.env.GCONTACTS_ID,
+  google_secret: process.env.GCONTACTS_SECRET,
+  google_callback: process.env.GCONTACTS_CALLBACK_URL,
 
-  connect_url: process.env.GOOGLE_CONTACTS_CONNECT_URL,
-  cluestr_id: process.env.GOOGLE_CONTACTS_CLUESTR_ID,
-  cluestr_secret: process.env.GOOGLE_CONTACTS_CLUESTR_SECRET,
+  connect_url: process.env.GCONTACTS_CONNECT_URL,
+  cluestr_id: process.env.GCONTACTS_CLUESTR_ID,
+  cluestr_secret: process.env.GCONTACTS_CLUESTR_SECRET,
 
   test_refresh_token: process.env.GOOGLE_CONTACTS_TEST_REFRESH_TOKEN
 };
