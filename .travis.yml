@@ -15,6 +15,6 @@ env:
   - secure: J0PtU/A+cMkh8Duo1GGzrYKYOoKLpXt5vEPFuNFJp6WdMm+qfu2LQ8QDp53iytoT5xicgNLqdQvBT/Zy9p3emCwTi4qbfva7jPe73B4gc1cC+VL9kX0zD51YRFtxo4YAKbP3kEXJCVrdYQNv/aaCKwiux6mJudDsygssw3Ngbtk=
 deploy:
   provider: heroku
-  app: provider-google-contact
+  app: anyfetch-provider-google-contact
   api_key:
     secure: bpl45TG8NP7aTCOQwMHTLEiP1R8sDrvh9ESUbiPwlNYvk5ISXz7HQx/yTFFKkJ14UbPZbOqcxCxMKfaWBzkhegvV7iz4imcYUuK3Hbz6T1LhkfDULlPc4ENJerHejzIEmhux1kNiCsTKKlPGa5F4zsCfiofqEfmTSOaowkdURNk=
