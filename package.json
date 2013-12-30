@@ -21,7 +21,7 @@
     "test": "NODE_ENV=test mocha -R spec -t 25000",
     "lint": "jshint lib/ test/ config/ bin/"
   },
-  "main": "./lib/provider-google-contact",
+  "main": "./lib/",
   "repository": {
     "type": "git",
     "url": "https://github.com/Papiel/provider-google-contact"

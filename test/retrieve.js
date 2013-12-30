@@ -2,7 +2,7 @@
 
 var should = require('should');
 var config = require('../config/configuration.js');
-var retrieve = require('../lib/provider-google-contact/helpers/retrieve.js');
+var retrieve = require('../lib/helpers/retrieve.js');
 
 describe("Retrieve code", function () {
   it("should list contacts", function (done) {
