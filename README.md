@@ -1,7 +1,7 @@
-# Google Contacts Cluestr Provider
-> Visit http://cluestr.com for details about Cluestr.
+# Google Contacts AnyFetch Provider
+> Visit http://anyfetch.com for details about AnyFetch.
 
-Cluestr provider for contacts stored in Google Contacts.
+AnyFetch provider for contacts stored in Google Contacts.
 
 # How to install?
 Vagrant up everything (`vagrant up`, `vagrant ssh`).
@@ -17,28 +17,28 @@ export GOOGLE_CONTACTS_SECRET={google-app-secret}
 # Don't forget to register this URL in your Google API console.
 export GOOGLE_CONTACTS_CALLBACK_URL={callback-after-google-consent /init/callback}
 
-# Cluestr app id and secret
-export GOOGLE_CONTACTS_CONNECT_URL="{callback from cluestr /init/connect}"
-export GOOGLE_CONTACTS_CLUESTR_ID={cluestr-app-id}
-export GOOGLE_CONTACTS_CLUESTR_SECRET={cluestr-app-secret}
+# AnyFetch app id and secret
+export GOOGLE_CONTACTS_CONNECT_URL="{callback from anyfetch /init/connect}"
+export GOOGLE_CONTACTS_CLUESTR_ID={anyfetch-app-id}
+export GOOGLE_CONTACTS_CLUESTR_SECRET={anyfetch-app-secret}
 
 # See below for details
 export GOOGLE_CONTACTS_TEST_REFRESH_TOKEN={refresh-token}
 ```
 
 # How does it works?
-Cluestr Core will call `/init/connect` with cluestr authorization code. The user will be transparently redirected to Google consentment page.
-Google will then call us back on `/init/callback` with a `code` parameter. We'll trade the `code` for an `access_token` and a `refresh_token` and store it in the database, along with Cluestr tokens.
+AnyFetch Core will call `/init/connect` with anyfetch authorization code. The user will be transparently redirected to Google consentment page.
+Google will then call us back on `/init/callback` with a `code` parameter. We'll trade the `code` for an `access_token` and a `refresh_token` and store it in the database, along with AnyFetch tokens.
 
-We can now sync datas between Google and Cluestr.
+We can now sync datas between Google and AnyFetch.
 
 This is where the `/update` endpoint comes into play.
-Every time `/update` is called, the function will retrieve, all the contacts modified since the last run, and upload the datas to Cluestr.
-Deleted contacts will also be deleted from Cluestr.
+Every time `/update` is called, the function will retrieve, all the contacts modified since the last run, and upload the datas to AnyFetch.
+Deleted contacts will also be deleted from AnyFetch.
 
 # How to test?
 Unfortunately, testing this module is not easy.
-This project is basically a simple bridge between Google and Cluestr, so testing requires tiptoeing with the network and Google Server / Cluestr server.
+This project is basically a simple bridge between Google and AnyFetch, so testing requires tiptoeing with the network and Google Server / AnyFetch server.
 
 Before running the test suite, you'll need to do:
 

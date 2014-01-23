@@ -1,5 +1,5 @@
 {
-  "name": "cluestr-provider-google-contact",
+  "name": "anyfetch-google-contact-provider",
   "version": "0.1.0",
   "author": "Matthieu Bacconnier <matthieu.bacconnier@papiel.fr>",
   "contributors": [
@@ -27,7 +27,7 @@
     "url": "https://github.com/Papiel/provider-google-contact"
   },
   "keywords": [
-    "cluestr",
+    "anyfetch",
     "provider",
     "google contacts"
   ],
@@ -36,7 +36,7 @@
     "request": "2.30.x",
     "googleapis": "0.4.x",
     "sspawn": "0.1.1",
-    "cluestr-provider": "0.x.x",
+    "anyfetch-provider": "0.x.x",
     "newrelic": "1.x.x"
   },
   "devDependencies": {
@@ -45,7 +45,7 @@
     "supertest": "0.8.x",
     "jshint": "2.3.x"
   },
-  "licence": "Copyright Papiel",
+  "licence": "MIT",
   "engines": {
     "node": ">=0.10"
   }
