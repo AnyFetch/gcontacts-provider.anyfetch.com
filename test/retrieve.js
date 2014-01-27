@@ -12,7 +12,7 @@ describe("Retrieve code", function () {
       }
 
       should.exist(contacts[0]);
-      contacts[0].should.have.property('id', 'http://www.google.com/m8/feeds/contacts/test.anyfetch%40gmail.com/base/587c929509de3a0a');
+      contacts[0].should.have.property('id', 'http://www.google.com/m8/feeds/contacts/test.cluestr%40gmail.com/base/587c929509de3a0a');
       contacts[0].should.have.property('name', 'Matthieu Bacconnier');
       contacts[0].should.have.property('given_name', 'Matthieu');
       contacts[0].should.have.property('family_name', 'Bacconnier');
