@@ -27,8 +27,8 @@ module.exports = {
   google_callback: process.env.GCONTACTS_CALLBACK_URL,
 
   connect_url: process.env.GCONTACTS_CONNECT_URL,
-  anyfetch_id: process.env.GCONTACTS_CLUESTR_ID,
-  anyfetch_secret: process.env.GCONTACTS_CLUESTR_SECRET,
+  anyfetch_id: process.env.GCONTACTS_ANYFETCH_ID,
+  anyfetch_secret: process.env.GCONTACTS_ANYFETCH_SECRET,
 
   test_refresh_token: process.env.GCONTACTS_TEST_REFRESH_TOKEN
 };
