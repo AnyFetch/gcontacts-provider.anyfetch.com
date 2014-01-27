@@ -4,7 +4,7 @@
 AnyFetch provider for contacts stored in Google Contacts.
 
 # How to install?
-Vagrant up everything (`vagrant up`, `vagrant ssh`).
+`git clone`, then `npm install`.
 
 You'll need to define some environment variables
 
@@ -19,15 +19,15 @@ export GOOGLE_CONTACTS_CALLBACK_URL={callback-after-google-consent /init/callbac
 
 # AnyFetch app id and secret
 export GOOGLE_CONTACTS_CONNECT_URL="{callback from anyfetch /init/connect}"
-export GOOGLE_CONTACTS_CLUESTR_ID={anyfetch-app-id}
-export GOOGLE_CONTACTS_CLUESTR_SECRET={anyfetch-app-secret}
+export GOOGLE_CONTACTS_ANYFETCH_ID={anyfetch-app-id}
+export GOOGLE_CONTACTS_ANYFETCH_SECRET={anyfetch-app-secret}
 
 # See below for details
 export GOOGLE_CONTACTS_TEST_REFRESH_TOKEN={refresh-token}
 ```
 
 # How does it works?
-AnyFetch Core will call `/init/connect` with anyfetch authorization code. The user will be transparently redirected to Google consentment page.
+Fetch API will call `/init/connect` with anyFetch authorization code. The user will be transparently redirected to Google consentment page.
 Google will then call us back on `/init/callback` with a `code` parameter. We'll trade the `code` for an `access_token` and a `refresh_token` and store it in the database, along with AnyFetch tokens.
 
 We can now sync datas between Google and AnyFetch.
