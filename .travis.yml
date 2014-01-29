@@ -15,6 +15,6 @@ env:
   - secure: bEo5kkn1BAh0M47+vld3gsxvL0z/oDCeWucp8/YzSpOdk9KDM95oLxv+oWP0ZNQWCSk8Z/KLlJwAQr1oPjBJEdKuzSG+V0xt81CQWgLhOZlJgZZB+8sXg2z4sQ8mge9IEijKzViq8XKlL66DwOq3NeSDGOLSaZU5hD9ixmX0bbY=
 deploy:
   provider: heroku
-  app: anyfetch-provider-gcontact
+  app: anyfetch-provider-gcontacts
   api_key:
     secure: bpl45TG8NP7aTCOQwMHTLEiP1R8sDrvh9ESUbiPwlNYvk5ISXz7HQx/yTFFKkJ14UbPZbOqcxCxMKfaWBzkhegvV7iz4imcYUuK3Hbz6T1LhkfDULlPc4ENJerHejzIEmhux1kNiCsTKKlPGa5F4zsCfiofqEfmTSOaowkdURNk=
