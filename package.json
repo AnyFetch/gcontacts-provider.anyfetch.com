@@ -1,5 +1,5 @@
 {
-  "name": "anyfetch-google-contact-provider",
+  "name": "anyfetch-gcontacts-provider",
   "version": "0.1.0",
   "author": "Matthieu Bacconnier <matthieu.bacconnier@papiel.fr>",
   "contributors": [
@@ -24,7 +24,7 @@
   "main": "./lib/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Papiel/provider-google-contact"
+    "url": "https://github.com/Papiel/gcontacts.provider.anyfetch.com"
   },
   "keywords": [
     "anyfetch",
