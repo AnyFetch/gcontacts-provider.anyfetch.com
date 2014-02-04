@@ -13,11 +13,14 @@ describe("Workflow", function () {
   before(AnyFetchProvider.debug.cleanTokens);
 
 // Create a fake HTTP server
-  process.env.CLUESTR_SERVER = 'http://localhost:1337';
+  process.env.ANYFETCH_SERVER_URL = 'http://localhost:1337';
 
   // Create a fake HTTP server
-  var frontServer = AnyFetchProvider.debug.createTestApiServer();
-  frontServer.listen(1337);
+  var apiServer = AnyFetchProvider.debug.createTestApiServer();
+  apiServer.listen(1337);
+  after(function() {
+    apiServer.close();
+  });
 
   before(function(done) {
     AnyFetchProvider.debug.createToken({
@@ -27,7 +30,7 @@ describe("Workflow", function () {
     }, done);
   });
 
-  it("should upload datas to AnyFetch", function (done) {
+  it("should upload datas to AnyFetch", function(done) {
     var originalQueueWorker = serverConfig.queueWorker;
     serverConfig.queueWorker = function(task, anyfetchClient, refreshToken, cb) {
       console.log(task.url);
