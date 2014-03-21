@@ -12,9 +12,6 @@ var serverConfig = require('../lib/');
 describe("Workflow", function () {
   before(AnyFetchProvider.debug.cleanTokens);
 
-// Create a fake HTTP server
-  process.env.ANYFETCH_SERVER_URL = 'http://localhost:1337';
-
   // Create a fake HTTP server
   var apiServer = AnyFetchProvider.debug.createTestApiServer();
   apiServer.listen(1337);
@@ -48,7 +45,8 @@ describe("Workflow", function () {
     request(server)
       .post('/update')
       .send({
-        access_token: 'fake_gc_access_token'
+        access_token: 'fake_gc_access_token',
+        api_url: 'http://localhost:1337'
       })
       .expect(202)
       .end(function(err) {
