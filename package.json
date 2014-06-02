@@ -24,7 +24,7 @@
   "main": "./lib/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Papiel/gcontacts.provider.anyfetch.com"
+    "url": "https://github.com/AnyFetch/gcontacts.provider.anyfetch.com"
   },
   "keywords": [
     "anyfetch",
