@@ -24,7 +24,7 @@
   "main": "./lib/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Papiel/gcontacts.provider.anyfetch.com"
+    "url": "https://github.com/AnyFetch/gcontacts.provider.anyfetch.com"
   },
   "keywords": [
     "anyfetch",
@@ -32,18 +32,18 @@
     "google contacts"
   ],
   "dependencies": {
-    "async": "0.2.x",
-    "request": "2.30.x",
-    "googleapis": "0.4.x",
+    "async": "0.8.x",
+    "request": "2.34.x",
+    "googleapis": "0.7.x",
     "sspawn": "0.1.1",
-    "anyfetch-provider": ">=0.3.11",
+    "anyfetch-provider": ">=0.3.16",
     "newrelic": "1.x.x"
   },
   "devDependencies": {
-    "mocha": "1.15.x",
-    "should": "2.1.x",
-    "supertest": "0.8.x",
-    "jshint": "2.3.x"
+    "mocha": "1.18.x",
+    "should": "3.3.x",
+    "supertest": "0.12.x",
+    "jshint": "2.5.x"
   },
   "licence": "MIT",
   "engines": {
