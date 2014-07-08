@@ -33,6 +33,7 @@ describe("Workflow", function () {
       function checkSpy() {
         if(spyPost && spyPost.callCount === 1) {
           spyPost.callCount.should.eql(1);
+          spyPost.restore();
           done();
         }
         else {
