@@ -8,8 +8,7 @@ before_script: npm install --dev
 script: npm test
 env:
   global:
-  - GCONTACTS_CONNECT_URL="http://localhost:8000/init/connect"
-  - GCONTACTS_CALLBACK_URL="http://localhost:8000/init/callback"
+  - PROVIDER_URL="http://localhost:8000"
   - GCONTACTS_ANYFETCH_ID="not-used"
   - GCONTACTS_ANYFETCH_SECRET="not-used"
   - secure: AAkhYBNVVY9iSmedw3lY4pYBfs7SfADp1LOFeIRqTTiVz/LhUqKYVbHSWPu4Sp5w5T+7vHcOqsEt4VHx5Fh055HFPGx/5ljVprW7dae2kDO4yAJuAb4NZzh0xLcvlPFRkiNKw/Wex8W1sCWJ5mxAcC2lbIwHjRi1kTMjgfzrkbw=

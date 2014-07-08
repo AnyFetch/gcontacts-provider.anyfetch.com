@@ -29,8 +29,10 @@ module.exports = {
   google_id: process.env.GCONTACTS_ID,
   google_secret: process.env.GCONTACTS_SECRET,
   
-  anyfetch_id: process.env.GCONTACTS_ANYFETCH_ID,
-  anyfetch_secret: process.env.GCONTACTS_ANYFETCH_SECRET,
+  appId: process.env.GCONTACTS_ANYFETCH_ID,
+  appSecret: process.env.GCONTACTS_ANYFETCH_SECRET,
+
+  providerUrl: process.env.PROVIDER_URL,
 
   test_refresh_token: process.env.GCONTACTS_TEST_REFRESH_TOKEN
 };
