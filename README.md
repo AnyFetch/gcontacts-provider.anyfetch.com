@@ -13,7 +13,9 @@ You'll need to define some environment variables
 export GCONTACTS_ID={google-app-id}
 export GCONTACTS_SECRET={google-app-secret}
 
-# Callback after google consent, most probably http://your-host/init/callback
+# Callback after google consent, most probably http://your-host
+PROVIDER_URL="http://your-host"
+
 # Don't forget to register this URL in your Google API console.
 export GCONTACTS_CALLBACK_URL={callback-after-google-consent /init/callback}
 
