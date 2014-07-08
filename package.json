@@ -39,14 +39,15 @@
     "anyfetch-provider": "1.x.x",
     "newrelic": "1.x.x",
     "dotenv": "^0.4.0",
-    "sinon": "1.10.x"
+    "rarity": "2.1.x"
   },
   "devDependencies": {
     "mocha": "1.18.x",
     "should": "3.3.x",
     "supertest": "0.12.x",
     "jshint": "2.5.x",
-    "anyfetch": "1.0.x"
+    "anyfetch": "1.0.x",
+    "sinon": "1.10.x"
   },
   "licence": "MIT",
   "engines": {
