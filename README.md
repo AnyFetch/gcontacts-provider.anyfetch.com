@@ -10,20 +10,20 @@ You'll need to define some environment variables
 
 ```shell
 # Go to https://code.google.com/apis/console/b/0/?pli=1#access to ask from app id and secret
-export GOOGLE_CONTACTS_ID={google-app-id}
-export GOOGLE_CONTACTS_SECRET={google-app-secret}
+export GCONTACTS_ID={google-app-id}
+export GCONTACTS_SECRET={google-app-secret}
 
 # Callback after google consent, most probably http://your-host/init/callback
 # Don't forget to register this URL in your Google API console.
-export GOOGLE_CONTACTS_CALLBACK_URL={callback-after-google-consent /init/callback}
+export GCONTACTS_CALLBACK_URL={callback-after-google-consent /init/callback}
 
 # AnyFetch app id and secret
-export GOOGLE_CONTACTS_CONNECT_URL="{callback from anyfetch /init/connect}"
-export GOOGLE_CONTACTS_ANYFETCH_ID={anyfetch-app-id}
-export GOOGLE_CONTACTS_ANYFETCH_SECRET={anyfetch-app-secret}
+export GCONTACTS_CONNECT_URL="{callback from anyfetch /init/connect}"
+export GCONTACTS_ANYFETCH_ID={anyfetch-app-id}
+export GCONTACTS_ANYFETCH_SECRET={anyfetch-app-secret}
 
 # See below for details
-export GOOGLE_CONTACTS_TEST_REFRESH_TOKEN={refresh-token}
+export GCONTACTS_TEST_REFRESH_TOKEN={refresh-token}
 ```
 
 # How does it works?
@@ -46,7 +46,7 @@ Before running the test suite, you'll need to do:
 > node test-auth.js
 ```
 
-Follow the link in your browser with your Google Account. You'll be redirected to `localhost` (server is not running, so you'll get an error). Copy-paste the `code` parameter in your shell (in the URL, after /init/callback), then save the token as `GOOGLE_CONTACTS_TEST_REFRESH_TOKEN` environment variable.
+Follow the link in your browser with your Google Account. You'll be redirected to `localhost` (server is not running, so you'll get an error). Copy-paste the `code` parameter in your shell (in the URL, after /init/callback), then save the token as `GCONTACTS_TEST_REFRESH_TOKEN` environment variable.
 
 > Warning: a refresh token is only displayed once. If you get it wrong for some reason, you'll need to clear the permission for your app on https://www.google.com/settings/u/1/security
 

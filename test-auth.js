@@ -18,7 +18,7 @@ var withLoggedClient = function(oauth2Client) {
   if(!oauth2Client.credentials.refresh_token) {
     console.log("You already have a refresh token, or something went amiss. Please go to your Google Acount and remove the authorization for your app.");
   } else {
-    console.log("Set this value in your GOOGLE_CONTACTS_TEST_REFRESH_TOKEN environment: ", oauth2Client.credentials.refresh_token);
+    console.log("Set this value in your GCONTACTS_TEST_REFRESH_TOKEN environment: ", oauth2Client.credentials.refresh_token);
   }
 
   process.exit();
