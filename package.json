@@ -36,15 +36,17 @@
     "request": "2.34.x",
     "googleapis": "0.7.x",
     "sspawn": "0.1.1",
-    "anyfetch-provider": "^0.3.16",
+    "anyfetch-provider": "1.x.x",
     "newrelic": "1.x.x",
-    "dotenv": "^0.4.0"
+    "dotenv": "^0.4.0",
+    "sinon": "1.10.x"
   },
   "devDependencies": {
     "mocha": "1.18.x",
     "should": "3.3.x",
     "supertest": "0.12.x",
-    "jshint": "2.5.x"
+    "jshint": "2.5.x",
+    "anyfetch": "1.0.x"
   },
   "licence": "MIT",
   "engines": {
