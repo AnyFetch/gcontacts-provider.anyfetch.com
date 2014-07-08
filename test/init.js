@@ -12,4 +12,11 @@ describe("GET /init/connect", function () {
       .expect('Location', /google\.com/)
       .end(done);
   });
+
+  it("should redirect to Google with callback URL", function (done) {
+    request(app).get('/init/connect?code=123')
+      .expect(302)
+      .expect('Location', /localhost%3A8000%2Finit%2Fcallback%3Fcode%3D/)
+      .end(done);
+  });
 });
