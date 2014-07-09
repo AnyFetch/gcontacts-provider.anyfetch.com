@@ -37,7 +37,6 @@
     "googleapis": "0.7.x",
     "sspawn": "0.1.1",
     "anyfetch-provider": "^0.3.16",
-    "newrelic": "1.x.x",
     "dotenv": "^0.4.0"
   },
   "devDependencies": {
