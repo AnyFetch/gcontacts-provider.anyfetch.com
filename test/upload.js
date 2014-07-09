@@ -20,7 +20,7 @@ describe("Workflow", function () {
   before(function(done) {
     AnyFetchProvider.debug.createToken({
       anyfetchToken: 'fake_gc_access_token',
-      data: {refresh_token: config.test_refresh_token},
+      data: {refresh_token: config.testRefreshToken},
       cursor: new Date(1970)
     }, done);
   });
