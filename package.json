@@ -40,7 +40,6 @@
     "request": "2.34.x",
     "googleapis": "0.7.x",
     "anyfetch-provider": "1.x.x",
-    "newrelic": "1.x.x",
     "dotenv": "^0.4.0",
     "rarity": "2.1.x"
   },
