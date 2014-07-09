@@ -6,7 +6,7 @@ var retrieve = require('../lib/helpers/retrieve.js');
 
 describe("Retrieve code", function () {
   it("should list contacts", function (done) {
-    retrieve(config.test_refresh_token, new Date(1970, 0, 1), function(err, contacts) {
+    retrieve(config.testRefreshToken, new Date(1970, 0, 1), function(err, contacts) {
       if(err) {
         throw err;
       }
@@ -23,7 +23,7 @@ describe("Retrieve code", function () {
   });
 
   it("should list contacts modified after specified date", function (done) {
-    retrieve(config.test_refresh_token, new Date(2020, 7, 22), function(err, contacts) {
+    retrieve(config.testRefreshToken, new Date(2020, 7, 22), function(err, contacts) {
       if(err) {
         throw err;
       }

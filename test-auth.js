@@ -18,7 +18,7 @@ var withLoggedClient = function(oauth2Client) {
   if(!oauth2Client.credentials.refresh_token) {
     console.log("You already have a refresh token, or something went amiss. Please go to your Google Acount and remove the authorization for your app.");
   } else {
-    console.log("Set this value in your GOOGLE_CONTACTS_TEST_REFRESH_TOKEN environment: ", oauth2Client.credentials.refresh_token);
+    console.log("Set this value in your GCONTACTS_TEST_REFRESH_TOKEN environment: ", oauth2Client.credentials.refresh_token);
   }
 
   process.exit();
@@ -29,7 +29,8 @@ var getAccessToken = function(oauth2Client, callback) {
   // generate consent page url
   var url = oauth2Client.generateAuthUrl({
     access_type: 'offline',
-    scope: 'https://www.google.com/m8/feeds'
+    scope: 'https://www.google.com/m8/feeds https://www.googleapis.com/auth/userinfo.email',
+    approval_prompt: 'force',
   });
 
   console.log('Visit the url: ', url);
@@ -37,6 +38,10 @@ var getAccessToken = function(oauth2Client, callback) {
 
     // request access token
     oauth2Client.getToken(code, function(err, tokens) {
+      if(err) {
+        console.log("ERROR: ", err);
+        return;
+      }
       // set tokens to the client
       oauth2Client.credentials = tokens;
 
@@ -47,7 +52,7 @@ var getAccessToken = function(oauth2Client, callback) {
 
 googleapis.execute(function(err, client) {
   var oauth2Client =
-    new OAuth2Client(config.google_id, config.google_secret, config.google_callback);
+    new OAuth2Client(config.googleId, config.googleSecret, "http://localhost:8000/init/callback");
 
   getAccessToken(oauth2Client, withLoggedClient);
 });

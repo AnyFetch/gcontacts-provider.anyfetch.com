@@ -2,45 +2,58 @@
 
 var request = require('supertest');
 var AnyFetchProvider = require('anyfetch-provider');
+var Anyfetch = require('anyfetch');
+var sinon = require('sinon');
 require('should');
 
 var config = require('../config/configuration.js');
 var serverConfig = require('../lib/');
 
-
-
 describe("Workflow", function () {
   before(AnyFetchProvider.debug.cleanTokens);
 
   // Create a fake HTTP server
-  var apiServer = AnyFetchProvider.debug.createTestApiServer();
+  Anyfetch.setApiUrl('http://localhost:1337');
+  var apiServer = Anyfetch.createMockServer();
   apiServer.listen(1337);
-  after(function() {
-    apiServer.close();
-  });
 
   before(function(done) {
     AnyFetchProvider.debug.createToken({
       anyfetchToken: 'fake_gc_access_token',
-      data: config.test_refresh_token,
+      data: {refresh_token: config.testRefreshToken},
       cursor: new Date(1970)
     }, done);
   });
 
   it("should upload data to AnyFetch", function(done) {
-    var originalQueueWorker = serverConfig.queueWorker;
-    serverConfig.queueWorker = function(task, anyfetchClient, refreshToken, cb) {
-      console.log(task.url);
-      task.should.have.property('url');
-      task.should.have.property('id');
+    var spyPost = null;
 
-      originalQueueWorker(task, anyfetchClient, refreshToken, cb);
-    };
-    var server = AnyFetchProvider.createServer(serverConfig);
+    var originalQueueWorker = serverConfig.workers.addition;
+    serverConfig.workers.addition = function(job, cb) {
+      function checkSpy() {
+        if(spyPost && spyPost.callCount === 1) {
+          spyPost.callCount.should.eql(1);
+          spyPost.restore();
+          done();
+        }
+        else {
+          setTimeout(checkSpy, 100);
+        }
+      }
 
-    server.queue.drain = function() {
-      done();
+      if(job.task._special) {
+        setTimeout(checkSpy, 500);
+        return cb(null);
+      }
+
+      spyPost = sinon.spy(job.anyfetchClient, "postDocument");
+
+      job.task.should.have.property('url');
+      job.task.should.have.property('id');
+
+      originalQueueWorker(job, cb);
     };
+    var server = AnyFetchProvider.createServer(serverConfig.connectFunctions, serverConfig.updateAccount, serverConfig.workers, serverConfig.config);
 
     request(server)
       .post('/update')
@@ -53,6 +66,8 @@ describe("Workflow", function () {
         if(err) {
           throw err;
         }
+
+        server.queue.create('addition', {_special: true, _anyfetchToken: 'fake_gc_access_token'}).priority('low').save();
       });
   });
 });

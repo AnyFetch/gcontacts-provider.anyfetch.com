@@ -10,6 +10,10 @@
     {
       "name": "Pierre-Marie Dartus",
       "email": "dartus.pierremarie@gmail.com"
+    },
+    {
+      "name": "Quentin Buathier",
+      "email": "quentin.buathier@epitech.eu"
     }
   ],
   "bin": {
@@ -18,8 +22,7 @@
   "scripts": {
     "start": "node ./bin/server",
     "upload": "node ./bin/upload",
-    "test": "NODE_ENV=test mocha -R spec -t 25000",
-    "lint": "jshint lib/ test/ config/ bin/"
+    "test": "NODE_ENV=test mocha -R spec -t 25000"
   },
   "main": "./lib/",
   "repository": {
@@ -35,15 +38,16 @@
     "async": "0.8.x",
     "request": "2.34.x",
     "googleapis": "0.7.x",
-    "sspawn": "0.1.1",
-    "anyfetch-provider": "^0.3.16",
-    "dotenv": "^0.4.0"
+    "anyfetch-provider": "^1.0.8",
+    "dotenv": "^0.4.0",
+    "rarity": "2.1.x"
   },
   "devDependencies": {
     "mocha": "1.18.x",
     "should": "3.3.x",
     "supertest": "0.12.x",
-    "jshint": "2.5.x"
+    "anyfetch": "1.0.x",
+    "sinon": "1.10.x"
   },
   "licence": "MIT",
   "engines": {
