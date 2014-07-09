@@ -24,7 +24,8 @@ if(node_env === "production") {
 module.exports = {
   env: node_env,
   port: process.env.PORT || default_port,
-  workers: process.env.WORKERS || 1,
+  mongoUrl: process.env.MONGOLAB_URI,
+  redisUrl: process.env.REDISCLOUD_URL,
 
   googleId: process.env.GCONTACTS_ID,
   googleSecret: process.env.GCONTACTS_SECRET,
