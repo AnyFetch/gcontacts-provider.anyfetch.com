@@ -24,14 +24,14 @@ if(node_env === "production") {
 module.exports = {
   env: node_env,
   port: process.env.PORT || default_port,
-  mongoUrl: process.env.MONGOLAB_URI,
-  redisUrl: process.env.REDISCLOUD_URL,
+  mongoUrl: process.env.MONGO_URL || process.env.MONGOLAB_URI,
+  redisUrl: process.env.REDIS_URL || process.env.REDISCLOUD_URL,
 
-  googleId: process.env.GCONTACTS_ID,
-  googleSecret: process.env.GCONTACTS_SECRET,
+  googleId: process.env.GCONTACTS_API_ID,
+  googleSecret: process.env.GCONTACTS_API_SECRET,
   
-  appId: process.env.GCONTACTS_ANYFETCH_ID,
-  appSecret: process.env.GCONTACTS_ANYFETCH_SECRET,
+  appId: process.env.ANYFETCH_API_ID,
+  appSecret: process.env.ANYFETCH_API_SECRET,
 
   providerUrl: process.env.PROVIDER_URL,
 

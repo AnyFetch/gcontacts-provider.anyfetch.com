@@ -1,7 +1,7 @@
 language: node_js
-services: 
-  - mongodb
-  - redis-server
+services:
+- mongodb
+- redis-server
 node_js:
 - '0.10'
 before_script: npm install --dev
@@ -9,8 +9,8 @@ script: npm test
 env:
   global:
   - PROVIDER_URL="http://localhost:8000"
-  - GCONTACTS_ANYFETCH_ID="not-used"
-  - GCONTACTS_ANYFETCH_SECRET="not-used"
-  - secure: AAkhYBNVVY9iSmedw3lY4pYBfs7SfADp1LOFeIRqTTiVz/LhUqKYVbHSWPu4Sp5w5T+7vHcOqsEt4VHx5Fh055HFPGx/5ljVprW7dae2kDO4yAJuAb4NZzh0xLcvlPFRkiNKw/Wex8W1sCWJ5mxAcC2lbIwHjRi1kTMjgfzrkbw=
-  - secure: B/suIgnuxmvd2SifyJh9DxIJXBjM/CWMDsj4lPkBczcjP3kyNzmSrQnEdeALIZdnmLzn1+KWCoG5XbZAZzdE6M2cH0sE3js65jSIKXTlAm/Qix1fTTgLHl1IJKHnaEMg62YfDbGx7vrbTTLcg+r/eRqKWnryY2PEtwzUTWTmoVc=
-  - secure: bEo5kkn1BAh0M47+vld3gsxvL0z/oDCeWucp8/YzSpOdk9KDM95oLxv+oWP0ZNQWCSk8Z/KLlJwAQr1oPjBJEdKuzSG+V0xt81CQWgLhOZlJgZZB+8sXg2z4sQ8mge9IEijKzViq8XKlL66DwOq3NeSDGOLSaZU5hD9ixmX0bbY=
+  - ANYFETCH_API_ID="not-used"
+  - ANYFETCH_API_SECRET="not-used"
+  - secure: DEvHGv/fQPjCLT2JquQ3hjGj+gsul8kzywmJ7T+FKLgbCEGdbvBUERouL8d77EBMHGIHSjn9o5wQmHrDwA72QVNaDp1vFm2SMY4FVyCxSgv4TbFtXd2Mh9LMAIQzx5U02z8GbynTe1vsfqkI7qh2eNInI1MfRNvPCkYGHg5heFw=
+  - secure: GRiH8j50YGqzcj1XqZifPmiWbSWJBXZqIutSNn8xXSfT1Kq4cHP4h8jdNN+d3Cct0AX7KUAVlnyvdYgpSwTzpObgzhEbp/ViCA28FSus1+58b0ftVPU7ajN+atP5lNuovKgEflOBIpNnK9gVH2auIdZxEOSsmCyZeeOE6w82LpI=
+  - secure: HjaA7rm6IZ2yPglFOeq/RECkiUe8xnRMNO5Ija2ltYktslbD1Vtx3sXnt6F83mv3oYEAmZD2ifnk6FEmiLfoBWzQN/u099hXPeOTtrkptkjKyZjjHu+RpQpohJ4tb1RJYuDI7YikSqrTkHQ4y0Ti3Dle7Dak5ZaYBmrq9RDZeDA=
