@@ -10,19 +10,15 @@ You'll need to define some environment variables
 
 ```shell
 # Go to https://code.google.com/apis/console/b/0/?pli=1#access to ask from app id and secret
-export GCONTACTS_ID={google-app-id}
-export GCONTACTS_SECRET={google-app-secret}
+export GCONTACTS_API_ID={google-app-id}
+export GCONTACTS_API_SECRET={google-app-secret}
 
 # Callback after google consent, most probably http://your-host
 PROVIDER_URL="http://your-host"
 
-# Don't forget to register this URL in your Google API console.
-export GCONTACTS_CALLBACK_URL={callback-after-google-consent /init/callback}
-
 # AnyFetch app id and secret
-export GCONTACTS_CONNECT_URL="{callback from anyfetch /init/connect}"
-export GCONTACTS_ANYFETCH_ID={anyfetch-app-id}
-export GCONTACTS_ANYFETCH_SECRET={anyfetch-app-secret}
+export ANYFETCH_API_ID={anyfetch-app-id}
+export ANYFETCH_API_SECRET={anyfetch-app-secret}
 
 # See below for details
 export GCONTACTS_TEST_REFRESH_TOKEN={refresh-token}
