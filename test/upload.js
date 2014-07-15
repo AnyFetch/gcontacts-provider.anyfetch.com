@@ -21,7 +21,8 @@ describe("Workflow", function () {
     AnyFetchProvider.debug.createToken({
       anyfetchToken: 'fake_gc_access_token',
       data: {refresh_token: config.testRefreshToken},
-      cursor: new Date(1970)
+      cursor: new Date(1970),
+      accountName: 'accountName'
     }, done);
   });
 
