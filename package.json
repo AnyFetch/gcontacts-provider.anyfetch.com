@@ -38,7 +38,7 @@
     "async": "0.8.x",
     "request": "2.34.x",
     "googleapis": "0.7.x",
-    "anyfetch-provider": "^1.0.15",
+    "anyfetch-provider": "^1.0.22",
     "dotenv": "^0.4.0",
     "rarity": "2.1.x"
   },
