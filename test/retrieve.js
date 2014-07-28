@@ -2,13 +2,12 @@
 
 var should = require('should');
 var googleapis = require('googleapis');
-var OAuth2Client = googleapis.OAuth2Client;
 var config = require('../config/configuration.js');
 var retrieve = require('../lib/helpers/retrieve.js');
 
 describe("Retrieve code", function () {
   it("should list contacts", function (done) {
-    var oauth2Client = new OAuth2Client(config.googleId, config.googleSecret, config.providerUrl + "/init/callback");
+    var oauth2Client = new googleapis.auth.OAuth2(config.googleId, config.googleSecret, config.providerUrl + "/init/callback");
     oauth2Client.refreshToken_(config.testRefreshToken, function(err, tokens) {
       if(err) {
         return done(err);
@@ -32,7 +31,7 @@ describe("Retrieve code", function () {
   });
 
   it("should list contacts modified after specified date", function (done) {
-    var oauth2Client = new OAuth2Client(config.googleId, config.googleSecret, config.providerUrl + "/init/callback");
+    var oauth2Client = new googleapis.auth.OAuth2(config.googleId, config.googleSecret, config.providerUrl + "/init/callback");
     oauth2Client.refreshToken_(config.testRefreshToken, function(err, tokens) {
       if(err) {
         return done(err);
