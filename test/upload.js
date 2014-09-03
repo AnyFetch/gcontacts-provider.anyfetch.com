@@ -65,7 +65,8 @@ describe("Workflow", function () {
       .post('/update')
       .send({
         access_token: 'fake_gc_access_token',
-        api_url: 'http://localhost:1337'
+        api_url: 'http://localhost:1337',
+        documents_per_update: 200
       })
       .expect(202)
       .end(function(err) {
@@ -73,7 +74,7 @@ describe("Workflow", function () {
           throw err;
         }
 
-        server.queue.create('addition', {_special: true, _anyfetchToken: 'fake_gc_access_token'}).priority('low').save();
+        server.queue.create('addition', {_special: true, _anyfetchToken: 'fake_gc_access_token', _anyfetchApiUrl: 'http://localhost:1337'}).priority('low').save();
       });
   });
 });
