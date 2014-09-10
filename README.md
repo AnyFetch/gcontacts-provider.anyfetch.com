@@ -50,4 +50,4 @@ Follow the link in your browser with your Google Account. You'll be redirected t
 
 > Warning: the test suite for Travis includes a secured token to some test account. It won't be used for PR however.
 
-Support: `support@papiel.fr`.
+Support: `support@anyfetch.com`.
