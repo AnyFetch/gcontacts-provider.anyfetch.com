@@ -5,7 +5,7 @@ var readline = require('readline');
 var request = require('request');
 var googleapis = require('googleapis');
 var config = require('./config/configuration.js');
-var OAuth2Client = googleapis.OAuth2Client;
+var OAuth2Client = googleapis.auth.OAuth2;
 
 
 var rl = readline.createInterface({
@@ -50,9 +50,5 @@ var getAccessToken = function(oauth2Client, callback) {
   });
 };
 
-googleapis.execute(function(err, client) {
-  var oauth2Client =
-    new OAuth2Client(config.googleId, config.googleSecret, "http://localhost:8000/init/callback");
-
-  getAccessToken(oauth2Client, withLoggedClient);
-});
+var oauth2Client = new OAuth2Client(config.googleId, config.googleSecret, "http://localhost:8000/init/callback");
+getAccessToken(oauth2Client, withLoggedClient);
