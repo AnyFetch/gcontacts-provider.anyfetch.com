@@ -27,9 +27,11 @@ module.exports = {
   mongoUrl: process.env.MONGO_URL || process.env.MONGOLAB_URI,
   redisUrl: process.env.REDIS_URL || process.env.REDISCLOUD_URL,
 
+  concurrency: process.env.GCONTACTS_CONCURRENCY || 1,
+
   googleId: process.env.GCONTACTS_API_ID,
   googleSecret: process.env.GCONTACTS_API_SECRET,
-  
+
   appId: process.env.ANYFETCH_API_ID,
   appSecret: process.env.ANYFETCH_API_SECRET,
 
@@ -37,10 +39,8 @@ module.exports = {
 
   testRefreshToken: process.env.GCONTACTS_TEST_REFRESH_TOKEN,
 
-  kue: {
-    attempts: 2,
-    backoff: {delay: 20 * 1000, type: 'fixed'}
-  },
+  retry: 2,
+  retryDelay: 20 * 1000,
 
   opbeat: {
     organizationId: process.env.OPBEAT_ORGANIZATION_ID,
