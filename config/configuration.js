@@ -27,6 +27,7 @@ module.exports = {
   mongoUrl: process.env.MONGO_URL || process.env.MONGOLAB_URI,
   redisUrl: process.env.REDIS_URL || process.env.REDISCLOUD_URL,
 
+  usersConcurrency: process.env.GCONTACTS_USERS_CONCURRENCY || 1,
   concurrency: process.env.GCONTACTS_CONCURRENCY || 1,
 
   googleId: process.env.GCONTACTS_API_ID,
