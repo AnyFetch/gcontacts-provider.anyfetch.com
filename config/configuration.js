@@ -42,7 +42,7 @@ module.exports = {
   testRefreshToken: process.env.GCONTACTS_TEST_REFRESH_TOKEN,
 
   retry: 2,
-  retryDelay: 20 * 1000,
+  retryDelay: 4 * 1000,
 
   opbeat: {
     organizationId: process.env.OPBEAT_ORGANIZATION_ID,
