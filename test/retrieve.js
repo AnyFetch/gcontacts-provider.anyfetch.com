@@ -1,6 +1,6 @@
 'use strict';
 
-var should = require('should');
+require('should');
 
 var config = require('../config/configuration.js');
 var update = require('../lib/update.js');
