@@ -9,8 +9,8 @@
 var dotenv = require('dotenv');
 dotenv.load();
 
-// node_env can either be "development" or "production"
-var node_env = process.env.NODE_ENV || "development";
+// nodeEnv can either be "development" or "production"
+var nodeEnv = process.env.NODE_ENV || "development";
 
 // Port to run the app on. 8000 for development
 // (Vagrant syncs this port)
@@ -22,7 +22,7 @@ if(node_env === "production") {
 
 // Exports configuration for use by app.js
 module.exports = {
-  env: node_env,
+  env: nodeEnv,
   port: process.env.PORT || default_port,
   mongoUrl: process.env.MONGO_URL || process.env.MONGOLAB_URI,
   redisUrl: process.env.REDIS_URL || process.env.REDISCLOUD_URL,

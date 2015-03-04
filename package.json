@@ -22,7 +22,8 @@
   "scripts": {
     "start": "node ./bin/server",
     "upload": "node ./bin/upload",
-    "test": "NODE_ENV=test mocha -R spec -t 25000"
+    "test": "NODE_ENV=test mocha -R spec -t 25000",
+    "lint": "jshint bin/ config/ lib/ test/ app.js && jscs bin/ config/ lib/ test/ app.js"
   },
   "main": "./lib/",
   "repository": {
