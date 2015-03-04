@@ -22,7 +22,8 @@
   "scripts": {
     "start": "node ./bin/server",
     "upload": "node ./bin/upload",
-    "test": "NODE_ENV=test mocha -R spec -t 25000"
+    "test": "NODE_ENV=test mocha -R spec -t 25000",
+    "lint": "jshint bin/ config/ lib/ test/ app.js && jscs bin/ config/ lib/ test/ app.js"
   },
   "main": "./lib/",
   "repository": {
@@ -47,6 +48,8 @@
     "should": "5.0.x",
     "supertest": "0.15.x",
     "anyfetch": "^2.1.9",
+    "jscs": "^1.11.3",
+    "jshint": "^2.6.0",
     "sinon": "1.12.x"
   },
   "licence": "MIT",
