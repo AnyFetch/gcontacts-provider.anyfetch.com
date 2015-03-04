@@ -48,6 +48,8 @@
     "should": "5.0.x",
     "supertest": "0.15.x",
     "anyfetch": "^2.1.9",
+    "jscs": "^1.11.3",
+    "jshint": "^2.6.0",
     "sinon": "1.12.x"
   },
   "licence": "MIT",
